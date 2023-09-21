@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SaleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [SaleController::class, 'mainPage']);
+Route::post('/createNewSaleRoute', [SaleController::class, 'createNewSale'])->name('createNewSale');
