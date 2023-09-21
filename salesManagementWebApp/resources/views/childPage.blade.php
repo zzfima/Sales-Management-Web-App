@@ -113,8 +113,8 @@
             </div>
 
             <div class="row">
-                <label for="price">Price:
-                    <input type="text" name="price" class="input-field" required placeholder="Enter price">
+                <label for="amount">Price:
+                    <input type="text" name="amount" class="input-field" required placeholder="Enter price">
                 </label>
             </div>
 

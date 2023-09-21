@@ -22,12 +22,15 @@ class SaleController extends Controller
     public function createNewSale(Request $request): RedirectResponse
     {
         $this->logInfo('New sale created for product ' . $request->productName);
-        /*
-                $newSaleItem = new Sale();
-                $newSaleItem->name = $request->listItem;
-                $newSaleItem->completed = false;
-                $newSaleItem->save();
-        */
+
+        $newSaleItem = new Sale();
+        $newSaleItem->time = date('Y-m-d H:i:s');
+        $newSaleItem->sale_number = 1;
+        $newSaleItem->description = $request->productName;
+        $newSaleItem->amount = $request->amount;
+        $newSaleItem->currency = $request->currency;
+        $newSaleItem->payment_link = 'http://d';
+        $newSaleItem->save();
         return redirect('/');
     }
 
