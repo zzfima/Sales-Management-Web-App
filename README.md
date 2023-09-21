@@ -15,3 +15,4 @@
    6. Check DB and see test data
 2. Creating controller for free from logic file api.php: _php artisan make:controller SaleController_
 3. Add routes into api.php
+4. Create Unittest: _php artisan make:test BasicTest_
