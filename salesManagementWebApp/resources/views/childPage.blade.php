@@ -53,6 +53,18 @@
         font-weight: bold;
         color: #009879;
     }
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .input-field {
+        margin-left: 1em;
+        padding: .5em;
+        margin-bottom: .5em;
+    }
 </style>
 
 <head>
@@ -90,7 +102,30 @@
         </table>
     </div>
     <div class="columnSmall">
-        <h2> Create new sale</h2>
+        <h2> New Sale Creation</h2>
+        <form method="post" action="{{ route('createNewSale') }}" accept-charset="UTF-8">
+            {{ csrf_field() }} <!-- security purposes -->
+
+            <div class="row">
+                <label for="productName">Product Name:
+                    <input type="text" name="productName" class="input-field" required placeholder="Enter product name">
+                </label>
+            </div>
+
+            <div class="row">
+                <label for="price">Price:
+                    <input type="text" name="price" class="input-field" required placeholder="Enter price">
+                </label>
+            </div>
+
+            <div class="row">
+                <label for="currency">Currency:
+                    <input type="text" name="currency" class="input-field" required placeholder="Enter currency">
+                </label>
+            </div>
+            <br>
+            <button>Insert Payment Details</button>
+        </form>
     </div>
 </div>
 </body>

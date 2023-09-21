@@ -21,7 +21,7 @@ class SaleController extends Controller
 
     public function createNewSale(Request $request): RedirectResponse
     {
-        $this->logInfo(json_encode('New sale created: '));
+        $this->logInfo('New sale created for product ' . $request->productName);
         /*
                 $newSaleItem = new Sale();
                 $newSaleItem->name = $request->listItem;
