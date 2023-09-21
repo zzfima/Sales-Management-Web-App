@@ -16,13 +16,13 @@ class SaleController extends Controller
         $this->logInfo('Child page loaded');
         return view('childPage',
             ['createdSales' => Sale::all()],
+            ['currencies' => ['USD', 'EUR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF', 'CNY', 'SEK', 'NZD', 'KRW', 'SGD', 'HKD', 'NOK', 'MXN', 'INR', 'BRL', 'ZAR', 'RUB', 'SAR']]
         );
     }
 
     public function createNewSale(Request $request): RedirectResponse
     {
         $this->logInfo('New sale created for product ' . $request->productName);
-
         $newSaleItem = new Sale();
         $newSaleItem->time = date('Y-m-d H:i:s');
         $newSaleItem->sale_number = 1;

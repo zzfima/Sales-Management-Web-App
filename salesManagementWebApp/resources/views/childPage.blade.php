@@ -120,7 +120,11 @@
 
             <div class="row">
                 <label for="currency">Currency:
-                    <input type="text" name="currency" class="input-field" required placeholder="Enter currency">
+                    <select name="currency">
+                        @foreach($currencies as $curr)
+                            <option value="{{$curr}}">{{$curr}}</option>
+                        @endforeach
+                    </select>
                 </label>
             </div>
             <br>
