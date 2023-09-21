@@ -5,19 +5,16 @@
         box-sizing: border-box;
     }
 
-    /* Create two equal columns that floats next to each other */
-    .column {
+    .columnBig {
         float: left;
         width: 70%;
         padding: 10px;
-        height: 300px; /* Should be removed. Only for demonstration */
     }
 
-    /* Clear floats after the columns */
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
+    .columnSmall {
+        float: left;
+        width: 30%;
+        padding: 10px;
     }
 
     .styled-table {
@@ -65,34 +62,35 @@
 </head>
 <body class="antialiased">
 <div>
-    <div class="column">
-        <div class="table-responsive">
-            <h2> Created sales </h2>
-            <table class="styled-table">
-                <thead>
+    <div class="columnBig">
+        <h2> Created sales </h2>
+        <table class="styled-table">
+            <thead>
+            <tr>
+                <th>Time</th>
+                <th>Sale Number</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Currency</th>
+                <th>Payment Link</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($createdSales as $createdSale)
                 <tr>
-                    <th>Time</th>
-                    <th>Sale Number</th>
-                    <th>Description</th>
-                    <th>Amount</th>
-                    <th>Currency</th>
-                    <th>Payment Link</th>
+                    <td> {{$createdSale->time}} </td>
+                    <td> {{$createdSale->sale_number}} </td>
+                    <td> {{$createdSale->description}} </td>
+                    <td> {{$createdSale->amount}} </td>
+                    <td> {{$createdSale->currency}} </td>
+                    <td> {{$createdSale->payment_link}} </td>
                 </tr>
-                </thead>
-                <tbody>
-                @foreach($createdSales as $createdSale)
-                    <tr>
-                        <td> {{$createdSale->time}} </td>
-                        <td> {{$createdSale->sale_number}} </td>
-                        <td> {{$createdSale->description}} </td>
-                        <td> {{$createdSale->amount}} </td>
-                        <td> {{$createdSale->currency}} </td>
-                        <td> {{$createdSale->payment_link}} </td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-        </div>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
+    <div class="columnSmall">
+        <h2> Create new sale</h2>
     </div>
 </div>
 </body>
