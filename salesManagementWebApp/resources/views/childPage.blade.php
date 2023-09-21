@@ -103,7 +103,7 @@
     </div>
     <div class="columnSmall">
         <h2> New Sale Creation</h2>
-        <form method="post" action="{{ route('createNewSale') }}" accept-charset="UTF-8">
+        <form method="post" action="{{ route('createNewSaleWeb') }}" accept-charset="UTF-8">
             {{ csrf_field() }} <!-- security purposes -->
 
             <div class="row">
