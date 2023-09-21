@@ -16,7 +16,7 @@ class SaleController extends Controller
         $this->logInfo('Child page loaded');
         return view('childPage',
             ['createdSales' => Sale::all()],
-            ['currencies' => ['USD', 'EUR', 'JPY', 'GBP', 'AUD', 'CAD', 'CHF', 'CNY', 'SEK', 'NZD', 'KRW', 'SGD', 'HKD', 'NOK', 'MXN', 'INR', 'BRL', 'ZAR', 'RUB', 'SAR']]
+            ['currencies' => ['ILS', 'USD', 'EUR']]
         );
     }
 
