@@ -10,13 +10,17 @@ use Illuminate\View\View;
 
 class SaleController extends Controller
 {
+    public function GetCurrencies(): array
+    {
+        return ['ILS', 'USD', 'EUR'];
+    }
 
     public function mainPage(): View
     {
         $this->logInfo('Child page loaded');
         return view('childPage',
             ['createdSales' => Sale::all()],
-            ['currencies' => ['ILS', 'USD', 'EUR']]
+            ['currencies' => $this->GetCurrencies()]
         );
     }
 

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Http\Controllers\SaleController;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,12 +17,13 @@ class SaleFactory extends Factory
      */
     public function definition(): array
     {
+        $salesController = new SaleController();
         return [
             'time' => fake()->dateTime(),
             'sale_number' => fake()->numberBetween(10000000, 9000000),
             'description' => fake()->word(),
             'amount' => fake()->randomFloat(2, 0, 1000),
-            'currency' => fake()->currencyCode(),
+            'currency' => fake()->randomElement($salesController->GetCurrencies()),
             'payment_link' => fake()->url('http'),
         ];
     }
