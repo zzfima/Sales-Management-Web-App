@@ -13,8 +13,8 @@ class SaleController extends Controller
 
     public function mainPage(): View
     {
-        $this->logInfo('Main page loaded');
-        return view('mainPage',
+        $this->logInfo('Child page loaded');
+        return view('childPage',
             ['createdSales' => Sale::all()],
         );
     }
