@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [SaleController::class, 'mainPage']);
-Route::post('/createNewSaleRoute', [SaleController::class, 'createNewSale'])->name('createNewSale');
+Route::post('/createNewSale', [SaleController::class, 'createNewSale'])->name('createNewSale');

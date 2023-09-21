@@ -20,11 +20,16 @@ class SaleFactory extends Factory
         $salesController = new SaleController();
         return [
             'time' => fake()->dateTime(),
-            'sale_number' => fake()->numberBetween(10000000, 9000000),
-            'description' => fake()->word(),
             'amount' => fake()->randomFloat(2, 0, 1000),
+            'installments' => 1,
+            'sale_number' => fake()->numberBetween(10000000, 90000000),
+            'description' => fake()->word(),
             'currency' => fake()->randomElement($salesController->GetCurrencies()),
             'payment_link' => fake()->url('http'),
+            'language' => 'en',
+            'seller_payme_id' => fake()->uuid(),
+            'payme_sale_id' => fake()->uuid(),
+            'transaction_id' => fake()->uuid(),
         ];
     }
 }

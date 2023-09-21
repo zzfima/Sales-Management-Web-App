@@ -8,13 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Sale extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'time',
-        'sale_number',
-        'description',
-        'amount',
-        'currency',
-        'payment_link',
-    ];
 }
