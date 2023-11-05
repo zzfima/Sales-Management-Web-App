@@ -16,3 +16,6 @@
 2. Creating controller for free from logic file api.php: _php artisan make:controller SaleController_
 3. Add routes into api.php
 4. Create Unittest: _php artisan make:test BasicTest_
+
+### Frontend
+![image](https://github.com/zzfima/Sales-Management-Web-App/assets/7007970/1886aa0e-96b0-411a-b1a7-08d4f1ad3404)
